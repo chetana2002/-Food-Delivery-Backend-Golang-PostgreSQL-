@@ -1,80 +1,199 @@
 <h1 align="center">
   <img alt="cgapp logo" src="https://raw.githubusercontent.com/CossyCossy/food-delivery/master/html/img/cgapp_logo%402x.png" width="224px"/><br/>
-  Food Delivery Backend
+  Food Delivery Backend (Golang + PostgreSQL)
 </h1>
-<p align="center">Create a new production-ready food delivery project just as Uber Eats and Glovo  with <b>backend</b> (Golang) and <b>database</b> (PostgreSQL) in a few minutes.</p>
 
-<p align="center"><a href="https://github.com/CossyCossy/food-delivery" 
-target="_blank"><img src="https://img.shields.io/badge/Go-1.18+-00ADD8?style=for-the-badge&logo=go" alt="go version" /></a>&nbsp;
-<a href="https://github.com/CossyCossy/food-delivery" 
-target="_blank"><img src="https://img.shields.io/badge/PostgreSQL-10.21+-red?style=for-the-badge&logo=postgresql&logoColor=green" alt="PostgreSQL version" />
- </p>
+<p align="center">
+  A production-ready backend system for building a food-delivery platform like <b>Uber Eats</b>, <b>Swiggy</b>, or <b>Glovo</b>.  
+  Built with <b>Golang</b>, <b>PostgreSQL</b>, <b>REST APIs</b>, and a scalable backend architecture.
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Go-1.18+-00ADD8?style=for-the-badge&logo=go" />
+  <img src="https://img.shields.io/badge/PostgreSQL-10.21+-red?style=for-the-badge&logo=postgresql&logoColor=green" />
+</p>
 
 <br />
 
-<div align="center"> 
-
-**[PROJECT PHILOSOPHY](https://github.com/CossyCossy/food-delivery#-project-philosophy) • 
-[WIKI](https://github.com/CossyCossy/food-delivery#-wiki) •
-[DATABASE MODEL](https://github.com/CossyCossy/food-delivery#-database-model) • 
-[TECH STACK](https://github.com/CossyCossy/food-delivery#-tech-stack) • 
-[CONTRIBUTING](https://github.com/CossyCossy/food-delivery#%EF%B8%8F-contributing) • 
-[SPREAD THE WORD](https://github.com/CossyCossy/food-delivery#-spread-the-word) • 
-[LICENSE](https://github.com/CossyCossy/food-delivery#%EF%B8%8F-license)**
-
+<div align="center">  
+<b>[PROJECT PHILOSOPHY](#-project-philosophy) • 
+[DATABASE MODEL](#-database-model) • 
+[TECH STACK](#-tech-stack) • 
+[FEATURES](#-features) •
+[GETTING STARTED](#-getting-started) •
+[CONTRIBUTING](#️-contributing) • 
+[LICENSE](#️-license)</b>
 </div>
 
 <br />
 
-# 🧐 Project philosophy
-> A Food Delivery application that allows users to order food from a list of restaurants.
-> The Food Delivery backend is built using GoLang and uses PostgreSQL as a database. 
-> 
-> The Food Delivery backend is part of a project that [Crunch Garage](https://crunchgarage.com/) is working on. This project is currently working on the backend and database.
+---
 
+# 🧐 Project Philosophy
 
-# 📒 Database Model
+This project provides a **modern, modular, and scalable backend** for a real-world food delivery platform.  
+It includes:
 
-This project repository has [a great wiki](https://github.com/CossyCossy/food-delivery/wiki) (currently WIP) that you should consider reading! It goes into detail about the project from a more technical aspect. If you are interested in learning more about the project itself, go ahead and check it out!
+- Clean backend architecture using Golang  
+- PostgreSQL as the primary database  
+- JWT-based authentication  
+- APIs for restaurants, menus, cart, orders, and payments  
+- Industry-standard project structure  
+- Ready-to-use modules similar to Uber Eats, Zomato, and Glovo  
 
-# 👨‍💻 Tech stack
+This repository is ideal for learning backend engineering or using it as a foundation for a production project.
 
-Here's a brief high-level overview of the tech stack the Food Delivery backend is built on.:
+---
 
-- 🚨This project uses the [GoLang development framework](https://go.dev/). .
-- For persistent storage (database), the project uses the [PostgreSQL](https://postgresql.org/) package which allows the project to create a custom storage schema and save it to a local database.
-- The project uses the [JWT](https://jwt.io/) package to create and verify JWT tokens.
+# 📦 Features
 
+### 🔑 Authentication
+- JWT authentication  
+- Role-based access (admin, user, restaurant-owner)  
+- Secure password hashing  
 
-For more information on the technologies that power the Food Delivery backend, check out the [Tech Stack](https://github.com/CossyCossy/food-delivery/Tech-Stack) page on our wiki.
+### 🍽️ Restaurant & Menu
+- Add/manage restaurants  
+- Add/manage menu items  
+- Categories, pricing, availability  
+
+### 🛒 Cart Management
+- Add/remove items  
+- Cart totals  
+- Persisted cart items  
+
+### 📦 Order Management
+- Place orders  
+- Update order status (pending → accepted → out for delivery → completed)  
+- Order history  
+
+### 💳 Payments (Optional)
+- Mock payment processing  
+- Extendable to Stripe/Razorpay  
+
+### ⚙️ Architecture
+- Controllers  
+- Models  
+- Services  
+- Middleware  
+- Database migrations  
+
+---
+
+# 🗂️ Database Model
+
+This backend uses PostgreSQL with a clearly defined, normalized schema.
+
+Key tables include:
+
+- **Users** (roles: customer, admin, restaurant-owner)  
+- **Restaurants**  
+- **Menu Items**  
+- **Orders**  
+- **Order Items**  
+- **Carts**  
+- **Payments**  
+
+A detailed database schema is provided in the wiki.
+
+---
+
+# 👨‍💻 Tech Stack
+
+- **Language:** Go (Golang)  
+- **Database:** PostgreSQL  
+- **ORM / DB Layer:** GORM / pgx  
+- **Authentication:** JWT  
+- **Router:** Gorilla Mux / Fiber / Gin  
+- **Containerization:** Docker (optional)  
+- **API Documentation:** Swagger or Postman collection  
+
+---
+
+# 🚀 Getting Started
+
+Below are step-by-step commands and configuration you'll need to run the project locally.
+
+```bash
+# 1️⃣ Clone the Repository
+git clone https://github.com/your-username/go-food-delivery-backend.git
+cd go-food-delivery-backend
+```
+
+## 2️⃣ Install Dependencies
+```bash
+go mod tidy
+```
+
+## 3️⃣ Configure Environment Variables
+Create a `.env` file in the project root with the following content:
+```env
+DB_HOST=localhost
+DB_PORT=5432
+DB_USER=postgres
+DB_PASS=yourpassword
+DB_NAME=fooddelivery
+JWT_SECRET=supersecretkey
+```
+
+## 4️⃣ Start PostgreSQL (Docker)
+```bash
+docker run --name fooddb -e POSTGRES_PASSWORD=yourpassword -p 5432:5432 -d postgres
+```
+
+## 5️⃣ Run Server
+```bash
+go run main.go
+```
+
+---
+
+## 🧪 Testing
+```bash
+go test ./...
+```
+
+---
+
+## 🐳 Docker Deployment (Optional)
+```bash
+docker build -t go-food-delivery .
+docker run -p 8080:8080 go-food-delivery
+```
+
+---
+
+# ✨ Future Improvements
+
+```text
+- Redis caching
+- API rate limiting
+- WebSockets for live order tracking
+- Delivery partner module
+- CI/CD (GitHub Actions)
+- Kubernetes deployment
+- More unit/integration tests
+```
+
+---
 
 # ✍️ Contributing
 
-Interested in contributing to the Food Delivery backend project? Thanks so much for your interest! We are always looking for improvements to the project and contributions from open-source developers are greatly appreciated.
+```text
+Contributions are welcome!
+Feel free to open issues or submit pull requests.
+```
 
-If you have a contribution in mind, please check out our [Contribution Guide](https://github.com/CossyCossy/food-delivery/wiki/Contribution-Guide) for information on how to do so. Also, make sure you read our [Code of Conduct](https://github.com/CossyCossy/food-delivery/wiki/Code-of-Conduct) to foster an encouraging sense of community.
+---
 
-# 🌟 Spread the word!
+# ⚖️ License
 
-If you want to say thank you and/or support active development of the Food Delivery backend:
-
-- Add a GitHub Star to the project!
-- Check out our website [Crunch Garage](https://crunchgarage.com/) and [GitHub](https://github.com/Crunch-Garage)
- 
-
-Thanks so much for your interest in growing the reach of the Food Delivery backend!
-
-_**PS:** consider sharing and following our organization ([Crunch Garage](https://github.com/Crunch-Garage)) to continue the development of this project on [Food Delivery Backend](https://github.com/CossyCossy/food-delivery) :)_
-
-# ⚠️ License
-
-The Food Delivery backend is free and open-source software licensed under the GNU General Public License v3.0. All designs were created by [Crunch Garage](https://github.com/CossyCossy/food-delivery) and distributed under [MIT](./LICENSE).
-
-
-# 🥷 Author
-
-Cosmas Mbuvi | [Crunch Garage Homepage](https://crunchgarage.com)
+```text
+This project is open-source and available under the MIT License.
+```
 
 # 🍾 Cheers!
 
-Reminder that *you are great, you are enough, and your presence is valued.* If you are struggling with your mental health, please reach out to someone you love and consult a professional. [There are many resources for you to get help in a time of need.](https://www.nimh.nih.gov/health/find-help)
+If you like this project, don't forget to ⭐ **star the repository**.  
+You’re awesome — keep building!
+
