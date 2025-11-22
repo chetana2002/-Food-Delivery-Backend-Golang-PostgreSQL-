@@ -13,19 +13,6 @@
   <img src="https://img.shields.io/badge/PostgreSQL-10.21+-red?style=for-the-badge&logo=postgresql&logoColor=green" />
 </p>
 
-<br />
-
-<div align="center">  
-<b>[PROJECT PHILOSOPHY](#-project-philosophy) • 
-[DATABASE MODEL](#-database-model) • 
-[TECH STACK](#-tech-stack) • 
-[FEATURES](#-features) •
-[GETTING STARTED](#-getting-started) •
-[CONTRIBUTING](#️-contributing) • 
-[LICENSE](#️-license)</b>
-</div>
-
-<br />
 
 ---
 
